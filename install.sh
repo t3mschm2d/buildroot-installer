@@ -9,11 +9,7 @@ CONDA_CHECKER=$(which conda)
 function install_requirements {
     echo -e  "\n$HLINE"
     echo -e "Check for mandatory packages"
-    sudo apt install debianutils sed make binutils build-essential gcc-snapshot gcc g++ gzip bzip2 perl tar cpio unzip rsync file bc wget libncurses5 qt5-default libc6 python3 curl vagrant qemu qemu-kvm libvirt-clients libvirt-daemon-system virtinst bridge-utils virtualbox-qt
-
-    sudo systemctl enable libvirtd
-    sudo systemctl start libvirtd
-
+    sudo apt install debianutils sed make binutils build-essential gcc-snapshot gcc g++ gzip bzip2 perl tar cpio unzip rsync file bc wget libncurses5-dev qt5-default libc6-i386 python3 curl u-boot-tools texinfo mtd-utils lzop libssl-dev gettext flex device-tree-compiler cmake bison
     echo -e "$HLINE\n"
 }
 
@@ -83,4 +79,9 @@ if [ "$RESP" == "y" ] || [ "$RESP" == "Y" ]; then
     echo -e "$HLINE\n" 
 fi
 
-install_buildroot
+read -p "Do you want to install a clean version of the buildroot toolchain [y/n] " RESP
+if [ "$RESP" == "y" ] || [ "$RESP" == "Y" ]; then
+    echo -e  "\n$HLINE"
+    install_buildroot
+    echo -e "$HLINE\n" 
+fi
