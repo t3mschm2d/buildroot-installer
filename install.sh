@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Author: Tim Schmid
-# Installationscript for buildroot 
+# Installationscript for buildroot / dds 
 
 HLINE='---------------------------------------------------------------'
 CONDA_CHECKER=$(which conda)
@@ -9,7 +9,7 @@ CONDA_CHECKER=$(which conda)
 function install_requirements {
     echo -e  "\n$HLINE"
     echo -e "Check for mandatory packages"
-    sudo apt install debianutils sed make binutils build-essential gcc-snapshot gcc g++ gzip bzip2 perl tar cpio unzip rsync file bc wget libncurses5-dev qt5-default libc6-i386 python3 curl u-boot-tools texinfo mtd-utils lzop libssl-dev gettext flex device-tree-compiler cmake bison device-tree-compiler libssl-dev lzop zip libasio-dev libtinyxml2-dev libp11-dev libengine-pkcs11-openssl softhsm2 swig libpython3-dev
+    sudo apt install debianutils sed make binutils build-essential gcc-snapshot gcc g++ gzip bzip2 perl tar cpio unzip rsync file bc wget libncurses5-dev qt5-default libc6-i386 python3 curl u-boot-tools texinfo mtd-utils lzop libssl-dev gettext flex device-tree-compiler cmake bison device-tree-compiler libssl-dev lzop zip libasio-dev libtinyxml2-dev libp11-dev libengine-pkcs11-openssl softhsm2 swig libpython3-dev wget 
 
     read -p "Please enter your Linux username: " RESP
         echo -e  "\n$HLINE"
