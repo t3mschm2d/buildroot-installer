@@ -85,7 +85,7 @@ if [ "$RESP" == "y" ] || [ "$RESP" == "Y" ]; then
     echo -e "$HLINE\n" 
 fi
 
-read -p "Do you want to install a clean version of the buildroot toolchain [y/n] " RESP
+read -p "Do you want to install a clean version of the buildroot toolchain in this directory [y/n] " RESP
 if [ "$RESP" == "y" ] || [ "$RESP" == "Y" ]; then
     echo -e  "\n$HLINE"
     install_buildroot
